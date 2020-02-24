@@ -1,0 +1,11 @@
+.mybtn .button {
+    background-color: greenyellow;
+    border: 1px solid green;
+    width: 120px;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}

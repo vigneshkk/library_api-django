@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html ng-app="firstApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>User List application</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        {% load static %}
+        <script type="text/javascript" src="{% static 'controller.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    </head>
+    {% verbatim %}
+    <body>
+
+        <div ng-controller="ctrl">
+            ISBN<br>                        <input type="number" ng-model="isbn"><br>
+            BOOK_NAME<br>                   <input type="text" ng-model="book_name"><br>
+            AUTHOR<br>                      <input type="text" ng-model="author"><br>
+            NUMBER_OF_COPIES<br>            <input type="number" ng-model="ac_copy"><br>
+            NUMBER_OF_CURRENT_COPIES<br>    <input type="number" ng-model="cu_copy"><br>
+            <button ng-click="myFunction()">submit</button>
+            
+            <h1>Users in the database</h1>
+            <table border="1">
+                <tr>
+                <td>ISBN</td>
+                <td>BOOK_NAME</td>
+                <td>AUTHOR</td>
+                <td>NUMBER_OF_COPIES</td>
+                <td>NUMBER_OF_CURRENT_COPIES</td>
+                </tr>
+                <tr ng-repeat="user in userslist">
+                <td>{{ user.isbn }}</td>
+                <td>{{ user.book_name }}</td>
+                <td>{{ user.author }}</td>
+                <td>{{ user.no_of_actual_copies }}</td>
+                <td>{{ user.no_of_cuurent_copies }}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    {% endverbatim %}
+</html>
